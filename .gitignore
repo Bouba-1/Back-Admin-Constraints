@@ -1,0 +1,15 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Variables locales
+.env
+
+# Environnements locaux Bruno
+*.local.bru
+
+# Tokens exportés manuellement
+tokens.json
+
+# Rapports générés (si tu en crées)
+reports/
