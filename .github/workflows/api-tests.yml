@@ -25,5 +25,9 @@ jobs:
       - name: Install Bruno CLI
         run: npm install -g @usebruno/cli
 
+      - name: Test API access
+        run: 
+          curl -I https://integ.lge-goldeneyes-back.innovation-factory.io
+
       - name: Run Bruno Tests
         run: bru run . -r --env INTEG
