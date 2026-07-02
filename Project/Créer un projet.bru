@@ -1,0 +1,27 @@
+meta {
+  name: Créer un projet
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://integ.lge-goldeneyes-back.innovation-factory.io/api/project/createProject
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{token}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Test QA Project 003",
+    "description": "Projet créé via Bruno "
+  }
+}
+
+settings {
+  encodeUrl: true
+}

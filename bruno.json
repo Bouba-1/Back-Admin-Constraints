@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Back - Admin Constraints",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

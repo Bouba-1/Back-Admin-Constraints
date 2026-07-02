@@ -1,0 +1,24 @@
+meta {
+  name: Récupérer la liste des projets
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://integ.lge-goldeneyes-back.innovation-factory.io/api/project?page=0&size=10000
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 0
+  size: 10000
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

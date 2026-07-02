@@ -1,0 +1,31 @@
+meta {
+  name: POST Autom /api/auth/signin
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://integ.lge-goldeneyes-back.innovation-factory.io/api/auth
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "login": "menthol.test1@yopmail.com",
+    "password": "Azerty1234!"
+  }
+  
+}
+
+vars:post-response {
+  token: res.body.accessToken
+}
+
+tests {
+  bru.setEnvVar("token", res.body.accessToken);
+}
+
+settings {
+  encodeUrl: true
+}

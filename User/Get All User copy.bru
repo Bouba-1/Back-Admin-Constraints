@@ -1,0 +1,29 @@
+meta {
+  name: Get All User copy
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://integ.lge-goldeneyes-back.innovation-factory.io/api/user/all?size=200
+  body: json
+  auth: inherit
+}
+
+params:query {
+  size: 200
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  
+  
+}
+
+settings {
+  encodeUrl: true
+}

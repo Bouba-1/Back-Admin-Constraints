@@ -1,0 +1,20 @@
+meta {
+  name: Projets publiés
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://integ.lge-goldeneyes-back.innovation-factory.io/api/project/published
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{token}}
+  Content-Type: application/json
+}
+
+settings {
+  encodeUrl: true
+}

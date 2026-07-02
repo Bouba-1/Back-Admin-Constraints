@@ -1,0 +1,51 @@
+meta {
+  name: Vérifier présence projet copy
+  type: http
+  seq: 7
+}
+
+get {
+  url: https://integ.lge-goldeneyes-back.innovation-factory.io/api/project/id?id=631
+  body: none
+  auth: inherit
+}
+
+params:query {
+  id: 631
+}
+
+headers {
+  Authorization: Bearer {{token}}
+  Content-Type: application/json
+}
+
+tests {
+  test("Status code 200", () => {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Le projet est publié", () => {
+    const body = res.getBody();
+    expect(body.isPublished).to.equal(false);
+  });
+  
+  test("L'id est correct", () => {
+    const body = res.getBody();
+    expect(body.id).to.equal(631);
+  });
+  
+  test("Récupérer le nom du projet", () => {
+    const body = res.getBody();
+    console.log("Nom du projet :", body.name);
+  });
+  
+  const body = res.getBody();
+  
+  test(`Nom du projet : ${body.name}`, () => {
+    expect(body.name).to.not.be.empty;
+  });
+}
+
+settings {
+  encodeUrl: true
+}
