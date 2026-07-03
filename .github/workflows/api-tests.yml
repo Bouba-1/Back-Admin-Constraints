@@ -28,6 +28,11 @@ jobs:
       - name: Test API access
         run: 
           curl -I https://integ.lge-goldeneyes-back.innovation-factory.io
+        
+        
+      - name: Show runner IP
+        run: curl https://api.ipify.org
+
 
       - name: Run Bruno Tests
         run: bru run . -r --env INTEG
