@@ -1,0 +1,19 @@
+trigger:
+- main
+
+pool:
+  name: Default
+
+steps:
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+
+- script: npm install -g @usebruno/cli
+  displayName: Install Bruno CLI
+
+- powershell: |
+    $env:NODE_TLS_REJECT_UNAUTHORIZED="0"
+    bru run . -r --env INTEG
+  displayName: Run Bruno Tests
