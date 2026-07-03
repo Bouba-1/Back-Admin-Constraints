@@ -26,8 +26,7 @@ jobs:
         run: npm install -g @usebruno/cli
 
       - name: Test API access
-        run: 
-          curl -I https://integ.lge-goldeneyes-back.innovation-factory.io
+        run: curl -I https://integ.lge-goldeneyes-back.innovation-factory.io
         
         
       - name: Show runner IP
