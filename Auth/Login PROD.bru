@@ -1,0 +1,27 @@
+meta {
+  name: Login PROD
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://prod.lge-goldeneyes.innovation-factory.io/api/auth
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "login": "menthol.test1@yopmail.com",
+    "password": "Azerty1234!"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

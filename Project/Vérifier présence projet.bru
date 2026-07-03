@@ -19,6 +19,16 @@ headers {
   Content-Type: application/json
 }
 
+tests {
+  test("Test Ok avec le code 200", () => {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test("Voyons voir !", () => {
+    
+  });
+  
+}
+
 settings {
   encodeUrl: true
 }
