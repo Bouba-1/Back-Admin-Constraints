@@ -1,0 +1,36 @@
+meta {
+  name: Annotation copy
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://integ.lge-goldeneyes-back.innovation-factory.io/api/file
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  
+  
+}
+
+tests {
+  test("Status code 200", () => {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("file coco", () => {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}
