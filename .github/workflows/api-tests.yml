@@ -1,6 +1,8 @@
 name: API Tests
 
 on:
+  schedule:
+    - cron: "15 17 * * 1-5"   # Lun-Ven à 17:15 UTC = 19:15 Paris (été)
   push:
     branches:
       - main
