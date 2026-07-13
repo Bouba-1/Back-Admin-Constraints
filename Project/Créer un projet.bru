@@ -30,7 +30,7 @@ tests {
     if (status === 201) {
       expect(status).to.equal(201);
     } else if (
-      status === 422 &&
+      status === 400 &&
       body.message === "nom du projet que vous essayez de créer existe déjà."
     ) {
       expect(status).to.equal(422);
