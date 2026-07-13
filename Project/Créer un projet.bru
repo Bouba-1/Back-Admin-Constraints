@@ -26,6 +26,9 @@ tests {
   test("✅ Projet créé ou déjà existant", () => {
     const status = res.getStatus();
     const body = res.getBody();
+    console.log("Status =", status);
+    console.log("Body =", JSON.stringify(body));
+    console.log("Type =", typeof body);
   
     if (status === 201) {
       expect(status).to.equal(201);
