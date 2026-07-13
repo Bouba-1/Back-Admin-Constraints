@@ -22,6 +22,26 @@ body:json {
   }
 }
 
+tests {
+  test("✅ Projet créé ou déjà existant", () => {
+    const status = res.getStatus();
+    const body = res.getBody();
+  
+    if (status === 201) {
+      expect(status).to.equal(201);
+    } else if (
+      status === 422 &&
+      body.message === "nom du projet que vous essayez de créer existe déjà."
+    ) {
+      expect(status).to.equal(422);
+    } else {
+      throw new Error(
+        `Statut inattendu : ${status} - ${JSON.stringify(body)}`
+      );
+    }
+  });
+}
+
 settings {
   encodeUrl: true
 }
