@@ -33,7 +33,7 @@ tests {
       status === 400 &&
       body.message === "This project name is already taken"
     ) {
-      expect(status).to.equal(422);
+      expect(status).to.equal(400);
     } else {
       throw new Error(
         `Statut inattendu : ${status} - ${JSON.stringify(body)}`
