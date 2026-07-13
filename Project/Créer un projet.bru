@@ -31,7 +31,7 @@ tests {
       expect(status).to.equal(201);
     } else if (
       status === 400 &&
-      body.message === "nom du projet que vous essayez de créer existe déjà."
+      body.message === "This project name is already taken"
     ) {
       expect(status).to.equal(422);
     } else {
