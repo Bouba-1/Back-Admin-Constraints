@@ -19,6 +19,13 @@ headers {
   Authorization: Bearer {{token}}
 }
 
+tests {
+  test("Status code 200 - - ✅ Récupération et validation de la liste des projets effectuées avec succès", () => {
+    expect(res.getStatus()).to.equal(200);
+  });
+  //✅ Récupération et validation de la liste des projets effectuées avec succès
+}
+
 settings {
   encodeUrl: true
 }
