@@ -36,7 +36,7 @@ tests {
       expect(status).to.equal(400);
     } else {
       throw new Error(
-        `Statut inattendu : ${status} - ${JSON.stringify(body)}`
+        `Statut inattendu : ${status} - ${body}`
       );
     }
   });
